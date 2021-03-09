@@ -16,11 +16,11 @@
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": "atoms/605489/791984Circle"
+                    "ioValue": "atoms/796354/731534Circle"
                 },
                 {
                     "name": "height",
-                    "ioValue": -30
+                    "ioValue": -15
                 }
             ]
         },
@@ -43,7 +43,16 @@
             "x": 0.3814055636896047,
             "y": 0.2633587786259542,
             "uniqueID": 399062,
-            "ioValues": []
+            "ioValues": [
+                {
+                    "name": "3D shape 2",
+                    "ioValue": 10
+                },
+                {
+                    "name": "3D shape 3",
+                    "ioValue": 10
+                }
+            ]
         },
         {
             "atomType": "Extrude",
@@ -54,7 +63,7 @@
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": "atoms/605489/646684Circle"
+                    "ioValue": "atoms/796354/635251Circle"
                 },
                 {
                     "name": "height",
@@ -78,16 +87,37 @@
         {
             "atomType": "Color",
             "name": "Color",
-            "x": 0.7496339677891655,
-            "y": 0.3333333333333333,
+            "x": 0.650278293135436,
+            "y": 0.36259541984732824,
             "uniqueID": 104294,
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": "atoms/605489/293663Union"
+                    "ioValue": "atoms/796354/399062Union"
                 }
             ],
             "selectedColorIndex": "11"
+        },
+        {
+            "atomType": "Add-BOM-Tag",
+            "name": "Add BOM Tag",
+            "x": 0.8042671614100185,
+            "y": 0.4694656488549619,
+            "uniqueID": 691436,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/796354/104294Color"
+                }
+            ],
+            "BOMitem": {
+                "BOMitemName": "M3x15mm",
+                "numberNeeded": 1,
+                "costUSD": 0.1,
+                "source": "www.example.com",
+                "totalNeeded": 1,
+                "radius": 0.015384615384615385
+            }
         },
         {
             "atomType": "Output",
@@ -95,10 +125,65 @@
             "x": 0.9814471243042672,
             "y": 0.5,
             "uniqueID": 605514,
-            "ioValues": []
+            "ioValues": [
+                {
+                    "name": "number or geometry",
+                    "ioValue": "atoms/796354/691436Add-BOM-Tag"
+                }
+            ]
         }
     ],
-    "allConnectors": [],
+    "allConnectors": [
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "3D shape 3",
+            "ap2Primary": false,
+            "ap1ID": 705278,
+            "ap2ID": 399062
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 731534,
+            "ap2ID": 705278
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 399062,
+            "ap2ID": 104294
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "3D shape 2",
+            "ap2Primary": false,
+            "ap1ID": 919223,
+            "ap2ID": 399062
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 635251,
+            "ap2ID": 919223
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 104294,
+            "ap2ID": 691436
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": 691436,
+            "ap2ID": 605514
+        }
+    ],
     "fileTypeVersion": 1,
     "filetypeVersion": 1,
     "circleSegmentSize": "0.7"
